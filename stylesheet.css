@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+}
+
+body{
+    background: rgb(244, 208, 78);
+}
+main{
+    background-color: rgb(255, 255, 255);
+    width: 360px;
+    margin: auto;
+    margin-top: 15vh;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0 0 black;
+    border:1px solid black;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+#illustration-article{
+    width: 100%;
+    border-radius: 15px;
+}
+button{
+    background-color: rgb(244, 208, 78);
+    border: 0;
+    padding-inline: 25px;
+    padding-block: 5px;
+    font-size: 18px;
+    text-transform: capitalize;
+    width: fit-content;
+}
+section{
+    display:flex;
+    align-items:centre;
+    gap: 10px;
+}
