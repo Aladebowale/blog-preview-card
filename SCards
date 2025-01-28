@@ -1,0 +1,23 @@
+import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SCardsData} from "../Data/SCardsData";
+import { Link } from "react-router-dom";
+
+const SCards = () => {
+  return (
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'centre', padding: '10px'}}>
+            {SCardsData.map((card)=>(
+                <div Key={card.id} style={{margin: '10px',padding: '20px',height: '300px',border: '1px solid black', boxShadow: 'gray 1px 10px 10px', borderRadius: '20px'}}>
+                    <Link to={`/card/${card.id}`} className="hover:text-red-900">
+                    <FontAwesomeIcon icon={card.icon} style= {{fontSize: '30px'}}/>
+                    <h5 className="bg-red-400">{card.title}</h5>
+                    <p>{card.description.slice(0,15)}...</p>
+                    </Link>
+                </div>
+            ))}
+
+        </div>
+  )
+}
+
+export default SCards
