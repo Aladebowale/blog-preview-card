@@ -1,0 +1,58 @@
+import {useState} from 'react'
+const Stating= () => {
+    const [welcome,setWelcome] = useState('Hello');
+    const [count,setCount] = useState(0);
+    const [house,setHouse] = useState({
+        television: '',
+        size: 0, 
+        dinning: {
+            fruit: '',
+            color: ''
+        },
+        chainColor: '',
+        curtain: ''
+    })
+    // const [showObject, setShowObject]= useState
+    const HandleWelcome =() =>{
+        setWelcome('How are you')
+    }
+    const Subtraction= ()=>{
+        setCount(count-1)
+    }
+    const Addition= ()=>{
+        setCount(count+1)
+    }
+    const HandleObjects=()=>{
+        setHouse({
+            ...house,
+            television: 'Sharp',
+            size: 200,
+            dinning:{
+                fruit:'watermelon',
+                color: 'green'
+            },
+            chairColor: 'brown',
+            curtain: 'Gucci'
+        }
+        )     
+     }
+    return(
+        <div>
+            <p>{welcome}</p>
+            <h2>{count}</h2>
+            <button onClick={HandleWelcome}>click me</button>
+            <button onClick={Addition}>Add</button>
+            <button onClick={Subtraction}>Dedut</button>
+            <div>
+                <p>Television:{house.television}</p>
+                <p>Sitting room size:{house.size}</p>
+                <p>Fruit on the Dining:{house.dinning.fruit}</p>
+                <p>Fruit Color:{house.dinning.color}</p>
+                <p>Color of Chair:{house.chair.color}</p>
+                <p>Curtain Brand:{house.curtain}</p>
+            </div>
+            <button onClick={HandleObjects}>show House</button>
+        </div>
+    )
+}
+export default Stating
