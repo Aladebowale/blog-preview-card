@@ -1,0 +1,23 @@
+import React from 'react'
+import {PlayerBlog} from "../Data/PlayerBlog";
+import { Link } from "react-router-dom";
+
+const Players = () => {
+  return (
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'centre', padding: '10px'}}>
+            {PlayerBlog.map((card)=>(
+                <div Key={card.id} style={{margin: '10px',padding: '20px',height: '300px',border: '1px solid black', boxShadow: 'gray 1px 10px 10px', borderRadius: '20px'}}>
+                    <Link to={`/Player/${card.id}`} className="hover:text-red-900">
+                    <img src={card.image} alt='images' width={100}/>
+                    <h5 className="bg-red-400">{card.name}</h5>
+                    <h6 className='text-blue-400'>{card.dob}</h6>
+                    <p>{card.description}</p>
+                    </Link>
+                </div>
+            ))}
+
+        </div>
+  )
+}
+
+export default Players
