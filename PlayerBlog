@@ -1,0 +1,27 @@
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { PlayerBlog } from '../Data/PlayerBlog';
+
+
+const PlayerCard = () => {
+    const {id} = useParams()
+    const [card, setCard] = useState({});
+
+    useEffect(()=>{
+        const render = PlayerBlog.find((data)=> data.id===parseInt(id))
+        if(render){
+            setCard(render)
+        }
+    }, [id])
+
+  return ( 
+    <div>
+        <img src={card.image} alt="players"/>
+        <h5>{card.name}</h5>
+        <h6>{card.dob}</h6>
+        <p>{card.description}</p>
+    </div>
+  )
+}
+
+export default PlayerCard
