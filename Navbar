@@ -1,0 +1,32 @@
+// const Navbar= ()=>{
+//     return (
+//         <div>
+
+//         </div>
+//     )
+// }
+
+// export default Navbar
+
+import NavData from './Data/NavData';
+import { Link } from 'react-router-dom';
+const Navbar = ()=>{
+
+  return (
+    <div>
+       <ul style={{textDecoration:'none', display:'flex', listStyle: 'none', gap: '5px'}}></ul>
+      <div>
+        
+          {NavData.map((data, index)=>(
+            <li key={index}>
+              <Link to ={data.link}>{data.linkname}</Link>
+            </li>
+          ))}
+        
+      </div>
+
+    </div>
+  )
+}
+
+export default Navbar
